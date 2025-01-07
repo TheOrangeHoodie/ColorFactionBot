@@ -1,6 +1,5 @@
 import nextcord
 from nextcord.ext import commands
-from dotenv import dotenv_values
 
 class Tests(commands.Cog):
     def __init__(self, bot : commands.Bot):
