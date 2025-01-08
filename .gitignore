@@ -1,3 +1,3 @@
 .env
-__pycache/
-modules/__pycache/
+__pycache__/
+modules/__pycache__/

@@ -13,6 +13,10 @@ def appendJson(path, data):
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
+def getFactionInfo(factionName):
+    file = loadJson(factionsSaveFile)
+    return file[factionName]
+
 def addFaction(name, description, roleId):
     file : dict = loadJson(factionsSaveFile)
     file[name] = {
