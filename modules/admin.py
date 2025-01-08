@@ -12,7 +12,9 @@ class PosterView(nextcord.ui.View):
 
     @nextcord.ui.button(label="Join", style=nextcord.ButtonStyle.success)
     async def joinButton(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
-        pass
+        role = ctx.guild.get_role(self.factionInfo["role"])
+        await ctx.user.add_roles(role)
+        await ctx.send(ephemeral=True, content=f"You joined {self.factionInfo['name']}")
 
 
 class Admin(commands.Cog):
@@ -63,7 +65,10 @@ class Admin(commands.Cog):
         roleColor = ctx.guild.get_role(factionInfo["role"]).color
         embed = nextcord.Embed(
             title=f"FACTION: {factionInfo['name']}",
-            description=factionInfo["description"],
+            description=f"""
+                        NOTE: If you will pick a faction your choice will be irreversible CHOOSE WISELY
+                        {factionInfo['description']}
+                        """,
             color=roleColor,
         ).set_footer(text="Made by The Color Kings")
 
