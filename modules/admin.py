@@ -1,5 +1,6 @@
 import nextcord
 from nextcord.ext import commands
+import dbManager
 
 admins = [883030668962066452]
 
@@ -25,7 +26,14 @@ class Admin(commands.Cog):
             color=role.color
         )
 
-        await ctx.send("Please confirm faction creation.", embed=confirmEmbed)
+        dbManager.addFaction(name, description, role.id)
+        await ctx.send("Faction created!", embed=confirmEmbed)
+
+        # try: 
+            
+        # except:
+        #     print()
+        #     await ctx.send("Internal error occured!")
         
 
 
