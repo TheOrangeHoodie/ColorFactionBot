@@ -2,7 +2,7 @@ import nextcord
 from nextcord.ext import commands
 import dbManager
 
-admins = [883030668962066452]
+admins = [883030668962066452, 1085807943087296553]
 
 class PosterView(nextcord.ui.View):
     def __init__(self, factionInfo):
