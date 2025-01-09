@@ -21,7 +21,7 @@ class Admin(commands.Cog):
     def __init__(self, bot : commands.Bot):
         self.client = bot
 
-    @nextcord.slash_command(name="factioncreate", description="Admin command to create a faction", guild_ids=[1325892979646267404])
+    @nextcord.slash_command(name="factioncreate", description="Admin command to create a faction", guild_ids=[1325892979646267404, 1258511406328709233])
     async def factionCreate(self,
                             ctx : nextcord.Interaction,
                             name: str = nextcord.SlashOption(name="name", description="Faction name"),
@@ -46,7 +46,7 @@ class Admin(commands.Cog):
             print("Internal error! Its most likely invalid args")
             await ctx.send("Internal error occured!")
 
-    @nextcord.slash_command(name="createposter", description="Admin command for creating a poster", guild_ids=[1325892979646267404])
+    @nextcord.slash_command(name="createposter", description="Admin command for creating a poster", guild_ids=[1325892979646267404, 1258511406328709233])
     async def createPoster(self,
                            ctx: nextcord.Interaction,
                            factionName: str  = nextcord.SlashOption(name="factionname", description="Faction name to create poster for")):
