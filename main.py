@@ -3,6 +3,7 @@ import nextcord
 from nextcord.ext import commands
 import os
 
+TOKEN = os.environ.get("TOKEN")
 config = dotenv.dotenv_values("./.env")
 intents = nextcord.Intents.all()
 client = commands.Bot(intents=intents, command_prefix="o!")
@@ -45,4 +46,4 @@ async def reload(ctx, extenstion):
 
 
 
-client.run(config["TOKEN"])
+client.run(TOKEN)
