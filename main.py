@@ -2,6 +2,7 @@ import dotenv
 import nextcord
 from nextcord.ext import commands
 import os
+import healthcheck
 
 TOKEN = os.environ.get("TOKEN")
 config = dotenv.dotenv_values("./.env")
